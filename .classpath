@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Dalton/Desktop/Develope Stuff/Libraries/spigot-1.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Dalton/Desktop/Buildtools/craftbukkit-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tu/Desktop/DBZ TEST SERVER (1)/TestServer/craftbukkit-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tu/Desktop/DBZ TEST SERVER (1)/TestServer/spigot-1.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

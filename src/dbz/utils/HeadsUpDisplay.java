@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 import net.minecraft.server.v1_9_R1.DataWatcher;
 import net.minecraft.server.v1_9_R1.EntityPlayer;
-import net.minecraft.server.v1_9_R1.Packet;
+import net.minecraft.server.v1_9_R1.Packet;                                                    
 import net.minecraft.server.v1_9_R1.PacketPlayInClientCommand;
 import net.minecraft.server.v1_9_R1.PacketPlayOutEntityDestroy;
 import net.minecraft.server.v1_9_R1.PacketPlayOutEntityMetadata;
@@ -41,7 +41,7 @@ public class HeadsUpDisplay {
             return field;
         } catch (SecurityException e) {
             e.printStackTrace();
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchFieldException e) {                                             
             e.printStackTrace();
         }
         return null;
@@ -174,7 +174,7 @@ public class HeadsUpDisplay {
 		return packet;
 	}
 	
-	public static DataWatcher getWatcher(String text, int health){
+	//public static DataWatcher getWatcher(String text, int health){
 		DataWatcher watcher = new DataWatcher(null);
 		
 		watcher.a(0, (Byte) (byte) 0x20); //Flags, 0x20 = invisible
