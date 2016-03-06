@@ -20,6 +20,14 @@ public class DBZPlayer {
 		this.ki = currentClass.getStartingKi();
 	}
 	
+	public DBZPlayer(Player player, Classes classes) {
+		this.player = player;
+		this.currentClass = classes;
+		this.maxHealth = currentClass.getMaxHealth();
+		this.health = player.getHealth();
+		this.ki = currentClass.getStartingKi();
+	}
+	
 	// MODIFIED SETTERS AND GETTERS
 	
 	public void setDamage(double damage) {
@@ -34,8 +42,7 @@ public class DBZPlayer {
 	
 	public void setKi(int ki) {
 		this.ki = ki;
-		// Fix Exp system
-		player.setExp(ki);
+		player.setLevel(ki);
 	}
 	
 	// GETTERS AND SETTERS
