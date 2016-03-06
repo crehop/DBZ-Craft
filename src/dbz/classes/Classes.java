@@ -2,13 +2,13 @@ package dbz.classes;
 
 public enum Classes {
 	
-	GOKU("Goku", 500.0, 750000.0), PICCOLO("PICCOLO", 700, 500000.0);
+	GOKU("Goku", 500.0, 750000), PICCOLO("PICCOLO", 700, 500000);
 	
 	private String name;
 	private double maxHealth;
-	private double startingKi;
+	private int startingKi;
 	
-	private Classes(String name, double maxHealth, double startingKi) {
+	private Classes(String name, double maxHealth, int startingKi) {
 		this.name = name;
 		this.maxHealth = maxHealth;
 		this.startingKi = startingKi;
@@ -22,7 +22,7 @@ public enum Classes {
 		return maxHealth;
 	}
 
-	public double getStartingKi() {
+	public int getStartingKi() {
 		return startingKi;
 	}
 	
