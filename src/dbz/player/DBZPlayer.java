@@ -1,15 +1,19 @@
 package dbz.player;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import dbz.classes.Classes;
+import dbz.utils.BarAPI;
 
 public class DBZPlayer {
 
 	private Player player;
 	private double maxHealth;
 	private double health;
+	private int maxKi;
 	private int ki; 
+	private float charge;
 	private Classes currentClass;
 	
 	public DBZPlayer(Player player) {
@@ -17,7 +21,11 @@ public class DBZPlayer {
 		this.currentClass = Classes.GOKU;
 		this.maxHealth = currentClass.getMaxHealth();
 		this.health = player.getHealth();
-		this.ki = currentClass.getStartingKi();
+		this.maxKi = currentClass.getMaxKi();
+		this.ki = 0;
+		this.charge = 0.00F;
+		BarAPI.setMessage(player, ChatColor.BLUE + player.getName(), true);
+		BarAPI.setPercent(player, charge, true);
 	}
 	
 	public DBZPlayer(Player player, Classes classes) {
@@ -25,7 +33,11 @@ public class DBZPlayer {
 		this.currentClass = classes;
 		this.maxHealth = currentClass.getMaxHealth();
 		this.health = player.getHealth();
-		this.ki = currentClass.getStartingKi();
+		this.maxKi = currentClass.getMaxKi();
+		this.ki = 0;
+		this.charge = 0.00F;
+		BarAPI.setMessage(player, ChatColor.BLUE + player.getName(), true);
+		BarAPI.setPercent(player, charge, true);
 	}
 	
 	// MODIFIED SETTERS AND GETTERS
@@ -45,10 +57,27 @@ public class DBZPlayer {
 		player.setLevel(ki);
 	}
 	
+	public void setCharge(float charge) {
+		this.charge = charge;
+		BarAPI.setPercent(player, charge, true);
+	}
+	
 	// GETTERS AND SETTERS
 	
 	public double getMaxHealth() {
 		return maxHealth;
+	}
+
+	public float getCharge() {
+		return charge;
+	}
+
+	public int getMaxKi() {
+		return maxKi;
+	}
+
+	public void setMaxKi(int maxKi) {
+		this.maxKi = maxKi;
 	}
 
 	public void setMaxHealth(double maxHealth) {

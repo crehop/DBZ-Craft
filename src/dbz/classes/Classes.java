@@ -6,12 +6,12 @@ public enum Classes {
 	
 	private String name;
 	private double maxHealth;
-	private int startingKi;
+	private int maxKi;
 	
-	private Classes(String name, double maxHealth, int startingKi) {
+	private Classes(String name, double maxHealth, int maxKi) {
 		this.name = name;
 		this.maxHealth = maxHealth;
-		this.startingKi = startingKi;
+		this.maxKi = maxKi;
 	}
 
 	public String getName() {
@@ -22,8 +22,8 @@ public enum Classes {
 		return maxHealth;
 	}
 
-	public int getStartingKi() {
-		return startingKi;
+	public int getMaxKi() {
+		return maxKi;
 	}
 	
 }
