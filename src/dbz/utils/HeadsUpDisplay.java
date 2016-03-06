@@ -3,10 +3,21 @@ package dbz.utils;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
+import net.minecraft.server.v1_9_R1.DataWatcher;
+import net.minecraft.server.v1_9_R1.EntityPlayer;
+import net.minecraft.server.v1_9_R1.Packet;
+import net.minecraft.server.v1_9_R1.PacketPlayInClientCommand;
+import net.minecraft.server.v1_9_R1.PacketPlayOutEntityDestroy;
+import net.minecraft.server.v1_9_R1.PacketPlayOutEntityMetadata;
+import net.minecraft.server.v1_9_R1.PacketPlayOutSpawnEntityLiving;
+
 import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.craftbukkit.v1_9_R1.entity.CraftPlayer;
+
+import dbz.DBZ;
 
 // IMPORTANT
 // Remember to change "yourMainClass" to your plugin's main class and "yourPackage" to your package's name
@@ -190,7 +201,7 @@ public class HeadsUpDisplay {
 				sendPacket(player, destroyEntityPacket);
 				hasHealthBar.put(player.getName(), false);
 			}
-		}.runTaskLater(yourMainClass, 120L);
+		}.runTaskLater(DBZ.instance, 120L);
 	}
 	
 	public static void displayLoadingBar(final String text, final String completeText, final Player player, final int healthAdd, final long delay, final boolean loadUp){
@@ -243,12 +254,12 @@ public class HeadsUpDisplay {
 							sendPacket(player, destroyEntityPacket);
 							hasHealthBar.put(player.getName(), false);
 						}
-					}.runTaskLater(yourMainClass, 40L);
+					}.runTaskLater(DBZ.instance, 40L);
 					
 					this.cancel();
 				}
 			}
-		}.runTaskTimer(yourMainClass, delay, delay);
+		}.runTaskTimer(DBZ.instance, delay, delay);
 	}
 	
 	public static void displayLoadingBar(final String text, final String completeText, final Player player, final int secondsDelay, final boolean loadUp){
