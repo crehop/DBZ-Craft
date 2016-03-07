@@ -1,17 +1,14 @@
 package dbz;
 
-import org.bukkit.plugin.Plugin;
-
-public class HeartBeat {
+public class HeartBeat implements Runnable {
+	
 	private int currentTick = 0;
-	public HeartBeat(Plugin main){
-		main.getServer().getScheduler().scheduleSyncRepeatingTask(main, new Runnable(){
-		    @Override  
-		   	public void run(){
-		    	currentTick++;
-		}	}, 0L, 1L);
+
+	public HeartBeat() {
+		
 	}
-	public int getCurrentTick(){
-		return this.currentTick;
+	
+	public void run() {
+		currentTick++;
 	}
 }

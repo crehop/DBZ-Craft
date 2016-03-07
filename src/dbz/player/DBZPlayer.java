@@ -12,7 +12,7 @@ public class DBZPlayer {
 	private double maxHealth;
 	private double health;
 	private int maxKi;
-	private int ki; 
+	private int ki;
 	private float charge;
 	private Classes currentClass;
 	
