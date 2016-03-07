@@ -1,0 +1,7 @@
+name: DBZ-Craft
+main: dbz.DBZ
+version: 0.02
+description:
+            The Best DBZ Plugin ever Created!
+commands:
+    DBZ:
