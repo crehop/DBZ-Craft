@@ -1,17 +1,21 @@
 package dbz.abilities;
 
+import dbz.player.DBZPlayer;
+
 public abstract class Ability {
 
 	protected String name;
-	protected int kiCost;
-	protected float chargeTickDown;
-	protected float isRunning;
+	protected int kiPerTick;
+	protected int chargeTickDown;
+	protected boolean isRunning;
 	
-	public Ability() {
-		
+	public Ability(String name, int kiPerTick, int chargeTickDown) {
+		this.name = name;
+		this.kiPerTick = kiPerTick;
+		this.chargeTickDown = chargeTickDown;
 	}
 	
-	public abstract void runAbility();
+	public abstract void runAbility(DBZPlayer player);
 	
 	public abstract void tick();
 	
