@@ -9,8 +9,7 @@ public class HeartBeat {
 		    @Override  
 		   	public void run(){
 		    	currentTick++;
-		}	}, 0L, 5L);
-		
+		}	}, 0L, 1L);
 	}
 	public int getCurrentTick(){
 		return this.currentTick;
