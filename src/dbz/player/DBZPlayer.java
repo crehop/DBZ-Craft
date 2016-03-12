@@ -14,6 +14,7 @@ public class DBZPlayer {
 	private int maxKi;
 	private int ki;
 	private float charge;
+	private boolean immobile;
 	private Classes currentClass;
 	
 	public DBZPlayer(Player player) {
@@ -24,6 +25,7 @@ public class DBZPlayer {
 		this.maxKi = currentClass.getMaxKi();
 		this.ki = 0;
 		this.charge = 0.00F;
+		this.immobile = false;
 		BarAPI.setMessage(player, ChatColor.BLUE + player.getName(), true);
 		BarAPI.setPercent(player, charge, true);
 	}
@@ -90,6 +92,14 @@ public class DBZPlayer {
 
 	public int getKi() {
 		return ki;
+	}
+	
+	public boolean isImmobile() {
+		return immobile;
+	}
+
+	public void setImmobile(boolean immobile) {
+		this.immobile = immobile;
 	}
 
 	public Classes getCurrentClass() {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Location;
+import org.bukkit.util.Vector;
 
 
 /*
@@ -29,4 +30,11 @@ public class Maths {
 	        return circleblocks;
 	    }
 	
+	 public static Vector distanceToFrom(Location to, Location from) {
+		 Vector f = from.toVector();
+		 Vector t = to.toVector();
+		 Vector vector = t.subtract(f);
+		 return vector;
+	 }
+	 
 }

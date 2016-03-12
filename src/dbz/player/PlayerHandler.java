@@ -41,4 +41,13 @@ public class PlayerHandler {
 			dBZPlayers.remove(player);
 	}
 	
+	public DBZPlayer getDBZPlayer(Player player) {
+		for (DBZPlayer p : dBZPlayers) {
+			if (p.getPlayer().equals(player)) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
 }
