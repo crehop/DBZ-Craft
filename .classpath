@@ -2,8 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry excluding="src/" kind="src" path=""/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="depends/craftbukkit-1.9.jar"/>
-	<classpathentry kind="lib" path="depends/spigot-1.9.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="depends/craftbukkit-1.9.jar"/>
+	<classpathentry exported="true" kind="lib" path="depends/spigot-1.9.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
