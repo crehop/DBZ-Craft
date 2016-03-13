@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class PlayerHandler {
 
-	public static List<DBZPlayer> dBZPlayers = new ArrayList<>();
+	public static List<DBZPlayer> dBZPlayers = new ArrayList<DBZPlayer>();
 	
 	public static void updatePlayers() {
 		for (DBZPlayer p : dBZPlayers) {
