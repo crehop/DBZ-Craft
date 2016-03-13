@@ -1,6 +1,7 @@
 package dbz;
 
 import dbz.abilities.AbilityObjectManager;
+import dbz.player.PlayerHandler;
 
 public class HeartBeat implements Runnable {
 	
@@ -16,6 +17,7 @@ public class HeartBeat implements Runnable {
 		
 		currentTick++;
 		
+		PlayerHandler.updatePlayers();
 		aOM.tick();
 		
 	}

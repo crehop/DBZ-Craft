@@ -9,6 +9,12 @@ public class PlayerHandler {
 
 	public static List<DBZPlayer> dBZPlayers = new ArrayList<>();
 	
+	public static void updatePlayers() {
+		for (DBZPlayer p : dBZPlayers) {
+			p.update();
+		}
+	}
+	
 	public static void addDBZPlayer(DBZPlayer player) {
 		if (!dBZPlayers.contains(player)) 
 			dBZPlayers.add(player);

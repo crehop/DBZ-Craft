@@ -38,7 +38,14 @@ public class DBZPlayer {
 		this.maxKi = currentClass.getMaxKi();
 		this.ki = 0;
 		this.charge = 0.00F;
+		this.immobile = false;
 		BarAPI.setMessage(player, ChatColor.BLUE + player.getName(), true);
+		BarAPI.setPercent(player, charge, true);
+	}
+	
+	public void update() {
+		player.setHealth((player.getMaxHealth() * health)/maxHealth);
+		player.setLevel(ki);
 		BarAPI.setPercent(player, charge, true);
 	}
 	
