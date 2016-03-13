@@ -29,13 +29,13 @@ public class HeartBeat implements Runnable {
 	}
 	public boolean hasTimePassed(int initialTick, int time){
 		if(initialTick < currentTick){
-			if(currentTick - initialTick > time){
+			if(currentTick - initialTick >= time){
 				return true;
 			}
 			return false;
 		}else{
 			holder = 10000000 - initialTick;
-			if(holder + currentTick > time){
+			if(holder + currentTick >= time){
 				return true;
 			}else{
 				return false;
