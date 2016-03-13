@@ -18,7 +18,8 @@ public class InteractEventListener implements Listener {
 	public void playerInteractEvent(PlayerInteractEvent e) {
 		if (e.getAction().equals(Action.RIGHT_CLICK_AIR)) {
 			if (e.getItem().getType().equals(Material.DIAMOND)) {
-				new KamehamehaAbility().runAbility(PlayerHandler.getDBZPlayer(e.getPlayer()));
+				KamehamehaAbility kame = new KamehamehaAbility();
+				kame.runAbility(PlayerHandler.getDBZPlayer(e.getPlayer()));
 			}
 		}
 	}

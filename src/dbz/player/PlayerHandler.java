@@ -22,6 +22,7 @@ public class PlayerHandler {
 	
 	public static void addDBZPlayer(Player player) {
 		for (DBZPlayer p : dBZPlayers) {
+			if (p == null) continue;
 			if (p.getPlayer().equals(player)) {
 				return;
 			}
@@ -32,6 +33,7 @@ public class PlayerHandler {
 	
 	public static void removeDBZPlayer(Player player) {
 		for (DBZPlayer p : dBZPlayers) {
+			if (p == null) continue;
 			if (p.getPlayer().equals(player)) {
 				dBZPlayers.remove(p);
 			}
@@ -45,9 +47,8 @@ public class PlayerHandler {
 	
 	public static DBZPlayer getDBZPlayer(Player player) {
 		for (DBZPlayer p : dBZPlayers) {
-			if (p.getPlayer().equals(player)) {
-				return p;
-			}
+			if (p == null) continue;
+			if (p.getPlayer().equals(player)) return p;
 		}
 		return null;
 	}

@@ -14,10 +14,11 @@ public class DBZ extends JavaPlugin {
 	
 	public void onEnable() {
 		instance = this;
-		Bukkit.getServer().broadcastMessage("==========DBZ PLUGIN LOADED==========");
 		registerCommands();
 		registerEvents();
 		registerTasks();
+		
+		Bukkit.getServer().broadcastMessage("==========DBZ PLUGIN LOADED==========");
 	}
 	
 	public void onDisable() {
