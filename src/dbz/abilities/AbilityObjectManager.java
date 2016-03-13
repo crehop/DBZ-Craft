@@ -1,6 +1,7 @@
 package dbz.abilities;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import dbz.abilities.objects.Kamehameha;
@@ -11,7 +12,10 @@ public class AbilityObjectManager {
 	
 	public void tick() {
 		
-		for (Kamehameha k : kamehamehas) {
+		Iterator<Kamehameha> kamIt = kamehamehas.iterator();
+		
+		while(kamIt.hasNext()) {
+			Kamehameha k = kamIt.next();
 			if (k == null) continue;
 			
 			if (k.isDead()) {
@@ -20,7 +24,6 @@ public class AbilityObjectManager {
 				k.tick();
 			}
 		}
-		
 	}
 	
 }

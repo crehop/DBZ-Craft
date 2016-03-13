@@ -33,11 +33,11 @@ public class Kamehameha {
 	public void tick() {
 		isDead = fireball.isDead();
 		
-		if (!isDead) {
-			allLocations.add(Maths.circle(fireball.getLocation(), 10, 10, false, false, 0));
+		if (!isDead || !fireball.isOnGround()) {
+			allLocations.add(Maths.circle(fireball.getLocation(), 2, 2, true, true, 0));
 			for (List<Location> list : allLocations) {
 				for (Location l : list) {
-					ParticleEffect.BARRIER.display(0, 0, 0, 1, 1, l, 3000);
+					ParticleEffect.CRIT.display(0, 0, 0, 1, 1, l, 3000);
 				}
 			}
 			

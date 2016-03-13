@@ -1,10 +1,12 @@
 package dbz.player;
 
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.chat.TextComponent;
+
 import org.bukkit.entity.Player;
+import org.inventivetalent.bossbar.BossBar;
+import org.inventivetalent.bossbar.BossBarAPI;
 
 import dbz.classes.Classes;
-import dbz.utils.BarAPI;
 
 public class DBZPlayer {
 
@@ -14,6 +16,8 @@ public class DBZPlayer {
 	private int maxKi;
 	private int ki;
 	private float charge;
+	private BossBar bossBar;
+	private TextComponent text;
 	private boolean immobile;
 	private Classes currentClass;
 	
@@ -25,9 +29,9 @@ public class DBZPlayer {
 		this.maxKi = currentClass.getMaxKi();
 		this.ki = 0;
 		this.charge = 0.00F;
+		this.text = new TextComponent(player.getName());
+		this.bossBar = BossBarAPI.addBar(player, text, BossBarAPI.Color.YELLOW, BossBarAPI.Style.NOTCHED_20, charge, 100000, 1);
 		this.immobile = false;
-		BarAPI.setMessage(player, ChatColor.BLUE + player.getName(), true);
-		BarAPI.setPercent(player, charge, true);
 	}
 	
 	public DBZPlayer(Player player, Classes classes) {
@@ -38,15 +42,15 @@ public class DBZPlayer {
 		this.maxKi = currentClass.getMaxKi();
 		this.ki = 0;
 		this.charge = 0.00F;
+		this.text = new TextComponent(player.getName());
+		this.bossBar = BossBarAPI.addBar(player, text, BossBarAPI.Color.YELLOW, BossBarAPI.Style.NOTCHED_20, charge, 100000, 1);
 		this.immobile = false;
-		BarAPI.setMessage(player, ChatColor.BLUE + player.getName(), true);
-		BarAPI.setPercent(player, charge, true);
 	}
 	
 	public void update() {
 		player.setHealth((player.getMaxHealth() * health)/maxHealth);
 		player.setLevel(ki);
-		BarAPI.setPercent(player, charge, true);
+		this.setCharge(charge);
 	}
 	
 	// MODIFIED SETTERS AND GETTERS
@@ -68,7 +72,7 @@ public class DBZPlayer {
 	
 	public void setCharge(float charge) {
 		this.charge = charge;
-		BarAPI.setPercent(player, charge, true);
+		bossBar.setProgress(charge);
 	}
 	
 	// GETTERS AND SETTERS
