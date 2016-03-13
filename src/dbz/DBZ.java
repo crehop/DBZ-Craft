@@ -5,6 +5,8 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import dbz.listeners.DoubleTapListener;
+import dbz.listeners.InteractEventListener;
+import dbz.listeners.PlayerJoinListener;
 
 public class DBZ extends JavaPlugin {
 
@@ -29,6 +31,8 @@ public class DBZ extends JavaPlugin {
 	public void registerEvents() {
 		PluginManager pm = Bukkit.getServer().getPluginManager();
 		pm.registerEvents(new DoubleTapListener(), this);
+		pm.registerEvents(new InteractEventListener(), this);
+		pm.registerEvents(new PlayerJoinListener(), this);
 	}
 	
 	public void registerTasks() {
