@@ -7,18 +7,14 @@ import org.bukkit.entity.Player;
 
 public class PlayerHandler {
 
-	public List<DBZPlayer> dBZPlayers;
+	public static List<DBZPlayer> dBZPlayers = new ArrayList<>();
 	
-	public PlayerHandler() {
-		dBZPlayers = new ArrayList<>(); //Notice here about jdk 8, the <> has no arguments!
-	}
-	
-	public void addDBZPlayer(DBZPlayer player) {
+	public static void addDBZPlayer(DBZPlayer player) {
 		if (!dBZPlayers.contains(player)) 
 			dBZPlayers.add(player);
 	}
 	
-	public void addDBZPlayer(Player player) {
+	public static void addDBZPlayer(Player player) {
 		for (DBZPlayer p : dBZPlayers) {
 			if (p.getPlayer().equals(player)) {
 				return;
@@ -28,7 +24,7 @@ public class PlayerHandler {
 		dBZPlayers.add(new DBZPlayer(player));
 	}
 	
-	public void removeDBZPlayer(Player player) {
+	public static void removeDBZPlayer(Player player) {
 		for (DBZPlayer p : dBZPlayers) {
 			if (p.getPlayer().equals(player)) {
 				dBZPlayers.remove(p);
@@ -36,12 +32,12 @@ public class PlayerHandler {
 		}
 	}
 	
-	public void removeDBZPlayer(DBZPlayer player) {
+	public static void removeDBZPlayer(DBZPlayer player) {
 		if (!dBZPlayers.contains(player))
 			dBZPlayers.remove(player);
 	}
 	
-	public DBZPlayer getDBZPlayer(Player player) {
+	public static DBZPlayer getDBZPlayer(Player player) {
 		for (DBZPlayer p : dBZPlayers) {
 			if (p.getPlayer().equals(player)) {
 				return p;
