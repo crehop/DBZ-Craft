@@ -31,7 +31,7 @@ public class DoubleTapListener implements Listener{
 			if(newDistance < 0){
 				newDistance *= -1.0f;
 			}
-			Bukkit.broadcastMessage("DELTA = " + lastDistance + " DELTA(A) = " + newDistance);
+			//Bukkit.broadcastMessage("DELTA = " + lastDistance + " DELTA(A) = " + newDistance);
 			if(newDistance < ((float)(lastDistance - 0.0145f)) && newDistance > 0.0f && event.getFrom().getDirection().distance(event.getTo().getDirection()) < 0.0043f ){
 				event.getPlayer().teleport(event.getPlayer());
 				Bukkit.broadcastMessage("TAP:" + tapcount);
