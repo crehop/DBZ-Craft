@@ -5,6 +5,6 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="depends/craftbukkit-1.9.jar"/>
 	<classpathentry exported="true" kind="lib" path="depends/spigot-1.9.jar"/>
-	<classpathentry kind="lib" path="depends/BossBarAPI_v2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tu/Desktop/DBZ TEST SERVER (1)/BossBarAPI_v2.3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

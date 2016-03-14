@@ -16,30 +16,51 @@ public class DoubleTapListener implements Listener{
 	double x = 0.0f;
 	double y = 0.0f;
 	double z = 0.0f;
-	double transitVelocity = 0.0f;
-	Vector stop = new Vector(0,0,0);
+	Location lastVelocity;
+	Location transitVelocity;
+	float newDistance = 0.0f;
+	float lastDistance = 0.0f;
+	boolean eventCancelled;
+	int tapcount = 0;
 	@EventHandler (priority = EventPriority.HIGHEST)
 	public void TapListen(PlayerMoveEvent event){
-		Bukkit.broadcastMessage(event.getPlayer().getVelocity() + " : VELOCITY");
-		if(event.getPlayer().getVelocity().getX() != 0 || event.getPlayer().getVelocity().getY() != 0 || event.getPlayer().getVelocity().getZ() != 0){
-			event.getPlayer().teleport(event.getPlayer());
+		if(event.getTo().getY() == event.getFrom().getY()){
+			lastVelocity = event.getFrom();
+			transitVelocity = event.getTo();
+			newDistance = (float) lastVelocity.distance(transitVelocity);
+			if(newDistance < 0){
+				newDistance *= -1.0f;
+			}
+			Bukkit.broadcastMessage("DELTA = " + lastDistance + " DELTA(A) = " + newDistance);
+			if(newDistance < ((float)(lastDistance - 0.0145f)) && newDistance > 0.0f && event.getFrom().getDirection().distance(event.getTo().getDirection()) < 0.0043f ){
+				event.getPlayer().teleport(event.getPlayer());
+				Bukkit.broadcastMessage("TAP:" + tapcount);
+				tapcount++;
+				lastDistance = (float) lastVelocity.distance(transitVelocity);
+				if(lastDistance < 0){
+					lastDistance *= -1.0f;
+				}
+			}
+			lastDistance = (float) lastVelocity.distance(transitVelocity);
+		}else{
+			//need to work on double tap during climb/decent
+			//lastVelocity = event.getFrom();
+			//transitVelocity = event.getTo();
+			//newDistance = (float) lastVelocity.distance(transitVelocity);
+			//if(newDistance < 0){
+			//	newDistance *= -1.0f;
+			//}
+			//Bukkit.broadcastMessage("DELTA = " + lastDistance + " DELTA(A) = " + newDistance);
+			//if(newDistance < ((float)(lastDistance - 0.0145f)) && newDistance > 0.0f && event.getFrom().getDirection().distance(event.getTo().getDirection()) < 0.0043f ){
+			//	event.getPlayer().teleport(event.getPlayer());
+			//	Bukkit.broadcastMessage("TAP:" + tapcount);
+			//	tapcount++;
+			//	lastDistance = (float) lastVelocity.distance(transitVelocity);
+			//	if(lastDistance < 0){
+			//		lastDistance *= -1.0f;
+			//	}
+			//}
+			//lastDistance = (float) lastVelocity.distance(transitVelocity);
 		}
-		transit = event.getPlayer().getLocation();
-		if((transit.getX() - OldTransit.getX()) != 0){
-			x = transit.getX() - OldTransit.getX();
-		}
-		if((transit.getY() - OldTransit.getY()) != 0){
-			y= transit.getY() - OldTransit.getY();
-		}
-		if((transit.getZ() - OldTransit.getZ()) != 0){
-			z = transit.getZ() - OldTransit.getZ();
-		}
-		transitVelocity = x + y + z;
-		if(transitVelocity < 0){
-			transitVelocity *= -1;
-		}
-		//Bukkit.broadcastMessage("" + x + "," + y + "," + z);
-		//Bukkit.broadcastMessage(numberFormat.format(transitVelocity));
-		OldTransit = transit;
 	}
 }
