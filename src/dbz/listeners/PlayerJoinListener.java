@@ -12,5 +12,4 @@ public class PlayerJoinListener implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		PlayerHandler.addDBZPlayer(e.getPlayer());
 	}
-	
 }

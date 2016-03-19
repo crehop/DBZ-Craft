@@ -43,5 +43,4 @@ public class AbilityObjectManager {
 		}
 		return null;
 	}
-	
 }

@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.util.Vector;
 public class DoubleTapListener implements Listener{
 	public Location transit;
 	DecimalFormat numberFormat = new DecimalFormat("#.0");

@@ -53,6 +53,7 @@ public class OldDBZListeners {
 			}
 		}
 	}
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public static void getExplosion(EntityExplodeEvent event) {
 		List<Block> explosionBlocks = new ArrayList<Block>();

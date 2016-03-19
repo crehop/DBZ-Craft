@@ -20,7 +20,7 @@ public class KamehamehaAbility extends Ability {
 	public void runAbility(DBZPlayer player) {
 		tick = 0;
 		charge = 0;
-		player.setImmobile(true);
+		//player.setImmobile(true);
 		while(charge < 10) {
 			tick++;
 			if (HeartBeat.hasTimePassed(tick, 20)) continue;

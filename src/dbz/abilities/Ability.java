@@ -14,7 +14,5 @@ public abstract class Ability {
 		this.kiPerTick = kiPerTick;
 		this.chargeTickUp = 0;
 	}
-	
 	public abstract void runAbility(DBZPlayer player);
-	
 }

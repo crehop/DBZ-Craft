@@ -23,5 +23,4 @@ public class InteractEventListener implements Listener {
 			}
 		}
 	}
-	
 }
