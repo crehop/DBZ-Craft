@@ -1,4 +1,4 @@
-package src,dbz.listeners;
+package dbz.listeners;
 
 import java.text.DecimalFormat;
 
@@ -31,12 +31,12 @@ public class DoubleTapListener implements Listener{
 			if(newDistance < 0){
 				newDistance *= -1.0f;
 			}
-			Bukkit.broadcastMessage("CONFIRM");
-			if(newDistance < ((float)(lastDistance)) && newDistance > 0.0f && event.getFrom().getDirection().distance(event.getTo().getDirection()) < 0.0043f ){
+			//Bukkit.broadcastMessage("DELTA = " + lastDistance + " DELTA(A) = " + newDistance);
+			if(newDistance < ((float)(lastDistance - 0.0145f)) && newDistance > 0.0f && event.getFrom().getDirection().distance(event.getTo().getDirection()) < 0.0043f ){
 				event.getPlayer().teleport(event.getPlayer());
 				Bukkit.broadcastMessage("TAP:" + tapcount);
 				tapcount++;
-				lastDistance = (float) lastVelocity.distance(transitVelocity) + 0.0045f;
+				lastDistance = (float) lastVelocity.distance(transitVelocity);
 				if(lastDistance < 0){
 					lastDistance *= -1.0f;
 				}
