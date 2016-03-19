@@ -1,10 +1,10 @@
-package dbz.abilities;
+package dbz.abilities.oldAbilities;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-import PvpBalance.Effects;
+import dbz.utils.ParticleEffect;
 
 public class Block {
 	public static void block(Player player)
@@ -21,7 +21,7 @@ public class Block {
 	    v.multiply(hForce*d);
 	    v.setY(vForce*d);
 	    player.setVelocity(v);
-		Effects.blockedPlayer(player);
+		ParticleEffect.BLOCK_CRACK.display(0, 0, 0, 1, 1, player.getLocation(), 10);
 		player.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "YOU HAVE BEEN BLOCKED AND FORCED BACK!");
 	}
 

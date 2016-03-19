@@ -1,4 +1,4 @@
-package dbz.abilities;
+package dbz.abilities.oldAbilities;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -6,9 +6,8 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
 
-import PvpBalance.PvpHandler;
-
-public class Incapacitate {
+public class IncapacitateAbility {
+	
 	public static void Incapacitate(Player damagee, Player damager){
 		double d = 3.5;
 		PotionEffect potionEffect = new PotionEffect(PotionEffectType.CONFUSION, 300, 3);

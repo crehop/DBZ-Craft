@@ -1,13 +1,7 @@
-package dbz.abilities;
-
-import org.bukkit.entity.Player;
-import org.bukkit.util.Vector;
-
-import PvpBalance.PVPPlayer;
-import PvpBalance.PvpHandler;
-import Util.Utils;
+package dbz.abilities.oldAbilities;
 
 public class SuperHit {
+	/*
 	public static void superHit(Player damager, Player damagee) 
 	{
 		PVPPlayer pvp = PvpHandler.getPvpPlayer(damager);
@@ -43,5 +37,6 @@ public class SuperHit {
         damagee.setFlying(false);
         damaged.setSuperMode(false);
 	}
+	*/
 }
 

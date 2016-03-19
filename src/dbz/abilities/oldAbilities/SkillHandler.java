@@ -1,4 +1,4 @@
-package dbz.abilities;
+package dbz.abilities.oldAbilities;
 
 import java.util.ArrayList;
 import java.util.List;
