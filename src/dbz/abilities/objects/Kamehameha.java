@@ -11,10 +11,10 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 
-import code.op.utils.CustomEntityFirework;
 import dbz.abilities.AbilityObjectManager;
 import dbz.player.DBZPlayer;
 import dbz.player.PlayerHandler;
+import dbz.utils.CustomEntityFirework;
 import dbz.utils.Maths;
 import dbz.utils.ParticleEffect;
 

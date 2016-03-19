@@ -1,4 +1,4 @@
-package code.op.utils;
+package dbz.utils;
 
 import org.bukkit.FireworkEffect;
 import org.bukkit.Location;
