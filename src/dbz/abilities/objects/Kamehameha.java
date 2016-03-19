@@ -16,7 +16,7 @@ import dbz.abilities.AbilityObjectManager;
 import dbz.player.DBZPlayer;
 import dbz.player.PlayerHandler;
 import dbz.utils.Maths;
-import dbz.utils.ParticleEffect;
+import dbz.utils.ParticleEffectsHandler;
 
 public class Kamehameha {
 
@@ -43,7 +43,7 @@ public class Kamehameha {
 		if (!isDead || !fireball.isOnGround()) {
 			allLocations.add(fireball.getLocation());
 			for (Location l : allLocations) {
-				ParticleEffect.CRIT.display(0, 0, 0, 1, 1, l, 3000);
+				ParticleEffectsHandler.CRIT.display(0, 0, 0, 1, 1, l, 3000);
 			}
 			for (Location l : Maths.circle(fireball.getLocation(), 2, 2, true, true, 0)) {
 				CustomEntityFirework.spawn(l, fe);			
