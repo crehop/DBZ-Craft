@@ -5,8 +5,8 @@ import dbz.player.PlayerHandler;
 
 public class HeartBeat implements Runnable {
 	
-	private int currentTick = 0;
-	private int holder = 0;
+	private static int currentTick = 0;
+	private static int holder = 0;
 	 
 	private AbilityObjectManager aOM;
 
@@ -27,7 +27,7 @@ public class HeartBeat implements Runnable {
 	public int getCurrentTick(){
 		return currentTick;
 	}
-	public boolean hasTimePassed(int initialTick, int time){
+	public static boolean hasTimePassed(int initialTick, int time){
 		if(initialTick < currentTick){
 			if(currentTick - initialTick >= time){
 				return true;

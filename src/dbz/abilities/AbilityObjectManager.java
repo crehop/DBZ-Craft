@@ -5,6 +5,8 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 
+import org.bukkit.entity.Player;
+
 import dbz.abilities.objects.Kamehameha;
 
 public class AbilityObjectManager {
@@ -31,6 +33,15 @@ public class AbilityObjectManager {
 		} catch (ConcurrentModificationException ex) {
 			return;
 		}
+	}
+	
+	public static Kamehameha getKamehameha(Player player) {
+		for (Kamehameha k : kamehamehas) {
+			if (k.getFireball().getShooter() == player) {
+				return k;
+			}
+		}
+		return null;
 	}
 	
 }

@@ -11,7 +11,7 @@ import dbz.utils.Maths;
 public class KamehamehaAbility extends Ability {
 
 	private int charge;
-	private int tick;
+	private static int tick;
 	
 	public KamehamehaAbility() {
 		super("Kamehameha", 50);
@@ -23,7 +23,7 @@ public class KamehamehaAbility extends Ability {
 		player.setImmobile(true);
 		while(charge < 10) {
 			tick++;
-			if (HeartBeat.hasTimePassed(tick, 20))
+			if (HeartBeat.hasTimePassed(tick, 20)) continue;
 			if (player.getKi() < kiPerTick) break;
 			charge++;
 			player.setCharge(charge/10);

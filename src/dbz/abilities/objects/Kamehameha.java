@@ -67,4 +67,8 @@ public class Kamehameha {
 		return isDead;
 	}
 	
+	public Fireball getFireball() {
+		return fireball;
+	}
+	
 }
