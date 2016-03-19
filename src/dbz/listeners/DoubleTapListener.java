@@ -24,5 +24,6 @@ public class DoubleTapListener implements Listener{
 	int tapcount = 0;
 	@EventHandler (priority = EventPriority.HIGHEST)
 	public void TapListen(PlayerMoveEvent event){
+		if(event.getPlayer().getInventory().get
 	}
 }
